@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ModelfirstMobilyasite.Models.YatakOdası>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Yeni", "Ekle")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kumas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Boyut)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kumas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Boyut)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fiyat)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.YatakOdaNo }, new { @class = "btn btn-warning" })) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.YatakOdaNo }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

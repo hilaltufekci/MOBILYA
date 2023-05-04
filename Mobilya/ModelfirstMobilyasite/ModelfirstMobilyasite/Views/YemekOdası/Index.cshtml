@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ModelfirstMobilyasite.Models.YemekOdası>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Yeni", "Ekle")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Malzeme)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KisiSayisi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Malzeme)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KisiSayisi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fiyat)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.YemekOdaNo }, new { @class = "btn btn-warning" }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.YemekOdaNo }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

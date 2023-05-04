@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="KoltukSet" EntityType="Model1.Store.KoltukSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="YemekOdasıSet" EntityType="Model1.Store.YemekOdasıSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="YatakOdasıSet" EntityType="Model1.Store.YatakOdasıSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="YatakSet" EntityType="Model1.Store.YatakSet" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="KoltukSet">
+    <Key>
+      <PropertyRef Name="KoltukNo" />
+    </Key>
+    <Property Name="KoltukNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Model" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Kumas" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Renk" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Fiyat" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="YemekOdasıSet">
+    <Key>
+      <PropertyRef Name="YemekOdaNo" />
+    </Key>
+    <Property Name="YemekOdaNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Malzeme" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="KisiSayisi" Type="int" Nullable="false" />
+    <Property Name="Fiyat" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="YatakOdasıSet">
+    <Key>
+      <PropertyRef Name="YatakOdaNo" />
+    </Key>
+    <Property Name="YatakOdaNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Model" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Kumas" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Boyut" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Fiyat" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="YatakSet">
+    <Key>
+      <PropertyRef Name="YatakNo" />
+    </Key>
+    <Property Name="YatakNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Model" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Malzeme" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Boyut" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Fiyat" Type="int" Nullable="false" />
+  </EntityType>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="KoltukSet" EntityType="Model1.Koltuk" />
+          <EntitySet Name="YemekOdasıSet" EntityType="Model1.YemekOdası" />
+          <EntitySet Name="YatakOdasıSet" EntityType="Model1.YatakOdası" />
+          <EntitySet Name="YatakSet" EntityType="Model1.Yatak" />
+        </EntityContainer>
+        <EntityType Name="Koltuk">
+          <Key>
+            <PropertyRef Name="KoltukNo" />
+          </Key>
+          <Property Name="KoltukNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Model" Type="String" Nullable="false" />
+          <Property Name="Kumas" Type="String" Nullable="false" />
+          <Property Name="Renk" Type="String" Nullable="false" />
+          <Property Name="Fiyat" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="YemekOdası">
+          <Key>
+            <PropertyRef Name="YemekOdaNo" />
+          </Key>
+          <Property Name="YemekOdaNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Malzeme" Type="String" Nullable="false" />
+          <Property Name="KisiSayisi" Type="Int32" Nullable="false" />
+          <Property Name="Fiyat" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="YatakOdası">
+          <Key>
+            <PropertyRef Name="YatakOdaNo" />
+          </Key>
+          <Property Name="YatakOdaNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Model" Type="String" Nullable="false" />
+          <Property Name="Kumas" Type="String" Nullable="false" />
+          <Property Name="Boyut" Type="String" Nullable="false" />
+          <Property Name="Fiyat" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Yatak">
+          <Key>
+            <PropertyRef Name="YatakNo" />
+          </Key>
+          <Property Name="YatakNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Model" Type="String" Nullable="false" />
+          <Property Name="Malzeme" Type="String" Nullable="false" />
+          <Property Name="Boyut" Type="String" Nullable="false" />
+          <Property Name="Fiyat" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="KoltukSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Koltuk)">
+        <MappingFragment StoreEntitySet="KoltukSet">
+          <ScalarProperty Name="KoltukNo" ColumnName="KoltukNo" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Kumas" ColumnName="Kumas" />
+          <ScalarProperty Name="Renk" ColumnName="Renk" />
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YemekOdasıSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.YemekOdası)">
+        <MappingFragment StoreEntitySet="YemekOdasıSet">
+          <ScalarProperty Name="YemekOdaNo" ColumnName="YemekOdaNo" />
+          <ScalarProperty Name="Malzeme" ColumnName="Malzeme" />
+          <ScalarProperty Name="KisiSayisi" ColumnName="KisiSayisi" />
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YatakOdasıSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.YatakOdası)">
+        <MappingFragment StoreEntitySet="YatakOdasıSet">
+          <ScalarProperty Name="YatakOdaNo" ColumnName="YatakOdaNo" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Kumas" ColumnName="Kumas" />
+          <ScalarProperty Name="Boyut" ColumnName="Boyut" />
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YatakSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Yatak)">
+        <MappingFragment StoreEntitySet="YatakSet">
+          <ScalarProperty Name="YatakNo" ColumnName="YatakNo" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Malzeme" ColumnName="Malzeme" />
+          <ScalarProperty Name="Boyut" ColumnName="Boyut" />
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
